@@ -14,6 +14,12 @@ workdata <- subset(data, Date %in% c("1/2/2007","2/2/2007") )
 
 Global_active_power <- as.numeric(workdata$Global_active_power)
 
+##Open png device and create file
+png("plot1.png", width=480, height=480)
+
 ## Use the function hist to create the graphic with the parameters needed for title, label and color
 
 hist(Global_active_power,col="red",main="Global Active Power",xlab = "Global Active Power (kilowatts)")
+
+##close device
+dev.off()
